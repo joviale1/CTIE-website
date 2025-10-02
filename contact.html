@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact - CTIE</title>
+  <meta name="description" content="Contactez le CTIE - Centre des Techniques Informatique et Électronique" />
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Header / Menu (même structure que index) -->
+<header>
+  <div class="container">
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="CTIE Logo"></a>
+    </div>
+
+    <nav>
+      <div id="burger" class="burger" aria-label="Menu" aria-expanded="false" role="button" tabindex="0">
+        <div></div><div></div><div></div>
+      </div>
+
+      <!-- id="menu" : correspond au CSS/JS précédents ; ajout de class nav-links pour compatibilité -->
+      <ul id="menu" class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="formations.html">Formations</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="medias.html">Médias</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main>
+  <section class="quick-contact" aria-labelledby="contact-heading" style="padding-top:40px;">
+    <div class="container" style="max-width:800px;">
+      <h1 id="contact-heading">Nous contacter</h1>
+      <p>Pour toute information sur nos formations, services ou partenariats, écrivez-nous ci-dessous.</p>
+
+      <!-- Formulaire (action Formspree) -->
+      <form id="contactForm" action="https://formspree.io/f/xkgqrzlj" method="POST" novalidate>
+        <!-- Optionnels / anti-spam -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Message du site CTIE">
+        <input type="hidden" name="_template" value="table">
+
+        <label for="name">Nom *</label>
+        <input id="name" name="name" type="text" required placeholder="Votre nom">
+
+        <label for="email">Email *</label>
+        <input id="email" name="email" type="email" required placeholder="votre@email.com">
+
+        <label for="phone">Téléphone (optionnel)</label>
+        <input id="phone" name="phone" type="tel" placeholder="0165848010">
+
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="6" required placeholder="Écrivez votre message ici..."></textarea>
+
+        <div style="display:flex;gap:12px;align-items:center;margin-top:12px;">
+          <button type="submit" class="btn">Envoyer</button>
+          <div id="formStatus" aria-live="polite" style="font-weight:600;"></div>
+        </div>
+
+        <noscript>
+          <p style="color:crimson">JavaScript est désactivé — le formulaire utilisera la soumission classique.</p>
+        </noscript>
+      </form>
+
+      <hr style="margin:30px 0;">
+
+      <h3>Contact direct</h3>
+      <p>Tél : 0165848010 / 0147545724<br>
+        Email : <a href="mailto:ctiebenin@gmail.com">ctiebenin@gmail.com</a><br>
+        Adresse : Ab-calavi Kansoukpa
+      </p>
+    </div>
+  </section>
+</main>
+
+<!-- Footer (même que index) -->
+<footer>
+  <div class="container">
+    <p>&copy; 2025 CTIE - Tous droits réservés</p>
+    <p>Contact : 0165848010 / 0147545724 | Email : ctiebenin@gmail.com</p>
+  </div>
+</footer>
+
+<!-- JS -->
+<script>
+  // ===== MENU BURGER =====
+  (function(){
+    const burger = document.getElementById('burger');
+    const menu = document.getElementById('menu');
+
+    if (burger && menu) {
+      burger.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        burger.classList.toggle('toggle');
+        // accessibilité
+        const expanded = burger.getAttribute('aria-expanded') === 'true';
+        burger.setAttribute('aria-expanded', String(!expanded));
+      });
+      // rendre accessible au clavier
+      burger.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') burger.click();
+      });
+    }
+  })();
+
+  // ===== FORM SUBMISSION (fetch) =====
+  (function(){
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+      // Utiliser fetch pour envoyer en AJAX et afficher un message sans recharger
+      e.preventDefault();
+
+      status.style.color = '';
+      status.textContent = 'Envoi en cours…';
+
+      const url = form.getAttribute('action');
+      const formData = new FormData(form);
+
+      fetch(url, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          status.style.color = 'green';
+          status.textContent = 'Message envoyé — merci !';
+          form.reset();
+        } else {
+          return response.json().then(data => {
+            throw new Error((data && data.error) ? data.error : 'Erreur lors de l’envoi');
+          });
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        status.style.color = 'crimson';
+        status.textContent = 'Erreur d’envoi — réessayez ou contactez-nous par email.';
+        // fallback : soumission classique si tu veux, décommente la ligne suivante
+        // form.submit();
+      });
+    });
+  })();
+
+  // ===== BACK TO TOP =====
+  (function(){
+    const backToTop = document.querySelector('.back-to-top');
+    if (!backToTop) return;
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) backToTop.style.display = 'block';
+      else backToTop.style.display = 'none';
+    });
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+</script>
+
+</body>
+</html>
