@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTIE - Centre des Techniques Informatique et Électronique</title>
+    <meta name="description" content="CTIE : Formations professionnelles en informatique, GSM, électronique. Services de réparation et vente. Centre agréé Canal+.">
+   
+    <!-- Preload importantes ressources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+   
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+   
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.png" type="image/png">
+   
+    <!-- Open Graph -->
+    <meta property="og:title" content="CTIE - Centre des Techniques Informatique et Électronique">
+    <meta property="og:description" content="Formations et services en informatique, GSM, électronique">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://joviale1.github.io/CTIE-website/">
+</head>
+<body>
+    <!-- Navigation Principale -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="CTIE Logo" width="60" height="60">
+                    <span class="logo-text">CTIE</span>
+                </a>
+
+                <!-- Navigation Desktop -->
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                        <li><a href="about.html" class="nav-link">À propos</a></li>
+                        <li><a href="formations.html" class="nav-link">Formations</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="medias.html" class="nav-link">Médias</a></li>
+                        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Bouton Admin (visible seulement si connecté) -->
+                <div class="header-actions">
+                    <a href="admin-media.html" class="admin-btn" style="display: none;">
+                        🛠️ Admin
+                    </a>
+                </div>
+
+                <!-- Menu Burger Mobile -->
+                <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-slider">
+                <!-- Les images seront chargées dynamiquement -->
+            </div>
+        </div>
+       
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    CTIE - Centre des Techniques Informatique et Électronique
+                </h1>
+                <p class="hero-subtitle">Apprenez, Réparez, Créez !</p>
+                <p class="hero-description">
+                    Formation professionnelle en informatique, GSM, électronique.
+                    Services complets de réparation et vente.
+                </p>
+                <div class="hero-actions">
+                    <a href="formations.html" class="btn btn-primary">Découvrir nos formations</a>
+                    <a href="contact.html" class="btn btn-secondary">Nous contacter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Points Forts -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pourquoi choisir CTIE ?</h2>
+                <p>Excellence et professionnalisme depuis nos débuts</p>
+            </div>
+
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Formation Professionnelle</h3>
+                    <p>Cours complets en informatique, GSM et électronique avec formateurs experts</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Services Complets</h3>
+                    <p>Vente et réparation de téléphones, ordinateurs et accessoires</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">📡</div>
+                    <h3>Centre Agréé Canal+</h3>
+                    <p>Distributeur agréé pour un service officiel et fiable</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">💫</div>
+                    <h3>Assistance Personnalisée</h3>
+                    <p>Accompagnement individualisé pour chaque élève et client</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Formations -->
+    <section class="courses-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos Formations Principales</h2>
+                <p>Développez vos compétences avec nos programmes certifiants</p>
+            </div>
+
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-icon">💻</div>
+                    <h3>Maintenance Informatique</h3>
+                    <p>Réparation PC, installation systèmes, sécurité informatique et réseaux</p>
+                    <ul class="course-features">
+                        <li>Diagnostic matériel</li>
+                        <li>Installation OS</li>
+                        <li>Sécurité réseaux</li>
+                    </ul>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">📱</div>
+                    <h3>Maintenance GSM</h3>
+                    <p>Dépannage mobile, réparation hardware et software toutes marques</p>
+                    <ul class="course-features">
+                        <li>Réparation écran</li>
+                        <li>Flash et déblocage</li>
+                        <li>Récupération données</li>
+                    </ul>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">🎨</div>
+                    <h3>Informatique / PAO</h3>
+                    <p>Bureautique, PAO, Photoshop, Illustrator et création multimédia</p>
+                    <ul class="course-features">
+                        <li>Suite Adobe</li>
+                        <li>Design graphique</li>
+                        <li>Montage vidéo</li>
+                    </ul>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">📶</div>
+                    <h3>Électronique & Antennes</h3>
+                    <p>Installation d'antennes, bases en électronique et dépannage</p>
+                    <ul class="course-features">
+                        <li>Circuits électroniques</li>
+                        <li>Installation antennes</li>
+                        <li>Dépannage TV</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-actions">
+                <a href="formations.html" class="btn btn-outline">Voir toutes les formations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos Services</h2>
+                <p>Des solutions complètes pour tous vos besoins technologiques</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Vente & Réparation</h3>
+                    <p>Téléphones, ordinateurs et accessoires GSM neufs et d'occasion</p>
+                    <span class="service-badge">🔧 Réparation Express</span>
+                </div>
+
+                <div class="service-card">
+                    <h3>Services Additionnels</h3>
+                    <p>Photocopie, saisie, tirage, plastification, conception graphique</p>
+                    <span class="service-badge">📄 Services Bureau</span>
+                </div>
+
+                <div class="service-card">
+                    <h3>Canal+ Agréé</h3>
+                    <p>Distributeur officiel Canal+ pour abonnements et installations</p>
+                    <span class="service-badge">📡 Agréé Officiel</span>
+                </div>
+            </div>
+
+            <div class="section-actions">
+                <a href="services.html" class="btn btn-outline">Découvrir tous les services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Témoignages -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ils nous font confiance</h2>
+                <p>Retours d'expérience de nos élèves et clients</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <blockquote class="testimonial-card">
+                    <p>"Grâce au CTIE, j'ai appris à réparer mon premier téléphone moi-même ! Formation très pratique."</p>
+                    <footer>
+                        <strong>Prince</strong>
+                        <span>Élève en Maintenance GSM</span>
+                    </footer>
+                </blockquote>
+
+                <blockquote class="testimonial-card">
+                    <p>"Les cours de PAO sont très complets et pratiques. J'ai pu monter mon activité de graphiste."</p>
+                    <footer>
+                        <strong>Amina</strong>
+                        <span>Élève en Informatique/PAO</span>
+                    </footer>
+                </blockquote>
+
+                <blockquote class="testimonial-card">
+                    <p>"Centre professionnel avec un personnel très disponible. Service après-formation excellent."</p>
+                    <footer>
+                        <strong>Rodrigue</strong>
+                        <span>Client Services</span>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à développer vos compétences ?</h2>
+                <p>Rejoignez le CTIE et transformez votre passion en expertise professionnelle</p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn btn-primary">S'inscrire maintenant</a>
+                    <a href="formations.html" class="btn btn-secondary">Explorer les formations</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="CTIE Logo" width="50" height="50">
+                        <span>CTIE</span>
+                    </div>
+                    <p>Centre des Techniques Informatique et Électronique</p>
+                    <p>Formation et services d'excellence depuis nos débuts</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Rapide</h3>
+                    <div class="contact-info">
+                        <p>📞 <a href="tel:0165848010">01 65 84 80 10</a></p>
+                        <p>📞 <a href="tel:0147545724">01 47 54 57 24</a></p>
+                        <p>📧 <a href="mailto:ctiebenin@gmail.com">ctiebenin@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Liens Rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="formations.html">Formations</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Adresse</h3>
+                    <address>
+                        Abomey-Calavi<br>
+                        Quartier Kansoukpa<br>
+                        Bénin
+                    </address>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 CTIE - Tous droits réservés</p>
+                <p>Développé avec passion pour l'éducation technologique</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+</body>
+</html>
